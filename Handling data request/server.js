@@ -18,6 +18,12 @@ http.createServer(function(req, res){
             var data = qString.parse(access.query);
             res.writeHead(200, {"Content-Type" : "text/plain"});
             res.end(JSON.stringify(data));
+        } else if (access.pathname == "/form") {
+            res.writeHead(200, {"Content-Type" : "text/html"});
+            fs.createReadStream("./form.html").pipe(res);
+        } else {
+            res.writeHead(404, {"Content-Type" : "text/plain"});
+            res.end("Page not Found!");
         }
 
     }
