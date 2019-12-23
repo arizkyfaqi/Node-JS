@@ -12,7 +12,7 @@ http.createServer(function(req, res){
         res.write("Hello World! from Node JS server\n");
         res.write("Your Request file : "+req.url);
     
-        //response end
+        //response end untuk menghentikan respon
         res.end();
     }
 
